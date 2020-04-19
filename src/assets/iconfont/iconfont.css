@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "iconfont";
+    src: url('iconfont.ttf?t=1587043866748') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gouwucheman:before {
+    content: "\e600";
+}
+
+.icon-leimupinleifenleileibie2:before {
+    content: "\e7f8";
+}
+
+.icon-wode:before {
+    content: "\e61f";
+}
+
+.icon-home:before {
+    content: "\e659";
+}
