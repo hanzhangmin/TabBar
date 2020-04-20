@@ -1,10 +1,12 @@
 <template>
   <div class="Tabitem"
-       @click="itemclick">
-    <div :style="activeStyle">
+       @click="itemclick"
+       :class="activeClass"
+       :style="Color">
+    <div>
       <slot name="Tabitem_icon"></slot>
     </div>
-    <div :style="activeStyle">
+    <div>
       <slot name="Tabitem_sign"></slot>
     </div>
   </div>
@@ -16,12 +18,7 @@ export default {
     path: String,
     activeColor: {
       type: String,
-      default: "#cf2d28"
-    }
-  },
-  data () {
-    return {
-      // isActive: true
+      default: "green"
     }
   },
   computed: {
@@ -31,11 +28,12 @@ export default {
       return !this.$route.path.indexOf(this.path)
       // indexOf(item ,num) item 要找的字符串 num 检索开始位置下标 存在则返回第一次存在的下标，不存在返回 -1 
     },
-    activeStyle () {
-      return this.isActive ? {        'color': this.activeColor, 'animation': 'myactive 0.3s',
-        '-moz-animation': ' myactive 0.3s',
-        '-webkit-animation': ' myactive 0.3s',
-        '-o-animation': 'myactive 0.3s'      } : {}
+    activeClass () {
+      console.log(this.activeColor)
+      return this.isActive ? "active" : "";
+    },
+    Color () {
+      return this.isActive ? { "color": this.activeColor } : {}
     }
   },
   methods: {
@@ -60,15 +58,14 @@ export default {
 .Tabitem div:last-child {
   font-size: 16px;
 }
-
-/* .active {
-  color: #cf2d28;
+/* 设置路由切换动画 */
+.active {
   animation: myactive 0.3s;
   -moz-animation: myactive 0.3s;
   -webkit-animation: myactive 0.3s;
   -o-animation: myactive 0.3s;
-} */
-/* @keyframes myactive {
+}
+@keyframes myactive {
   0% {
     transform: scale(0.5);
   }
@@ -87,5 +84,5 @@ export default {
   100% {
     transform: scale(1.05);
   }
-} */
+}
 </style>

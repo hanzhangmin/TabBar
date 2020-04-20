@@ -3,13 +3,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const home = () =>
-    import ('../components/routerComponents/home')
+    import ('components/routerComponents/home')
 const sort = () =>
-    import ('../components/routerComponents/sort')
+    import ('components/routerComponents/sort')
 const shop = () =>
-    import ('../components/routerComponents/shop')
+    import ('components/routerComponents/shop')
 const profile = () =>
-    import ('../components/routerComponents/profile')
+    import ('components/routerComponents/profile')
 
 const routes = [{
     path: '',
